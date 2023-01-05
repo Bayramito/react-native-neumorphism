@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bayramito/react-native-colorpicker"
+    "url": "https://github.com/Bayramito/react-native-neumorphism"
   },
   "keywords": [
     "react-native",
@@ -21,14 +21,15 @@
   "author": "bayram-arif",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Bayramito/react-native-colorpicker/issues"
+    "url": "https://github.com/Bayramito/react-native-neumorphism/issues"
   },
-  "homepage": "https://github.com/Bayramito/react-native-colorpicker#readme",
+  "homepage": "https://github.com/Bayramito/react-native-neumorphism#readme",
   "devDependencies": {
     "react": "18.1.0",
     "react-native": "0.70.1",
-    "react-native-gesture-handler": "^2.6.1",
     "react-native-linear-gradient": "^2.6.2",
+    "@shopify/react-native-skia": "^0.1.157",
+    "@react-native-masked-view/masked-view": "^0.2.6",
     "react-native-reanimated": "^2.10.0",
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
@@ -38,8 +39,9 @@
     "jest": "^26.6.3"
   },
   "peerDependencies": {
-    "react-native-gesture-handler": "2.x",
     "react-native-linear-gradient": "2.x",
-    "react-native-reanimated": "2.x"
+    "react-native-reanimated": "2.x",
+    "@shopify/react-native-skia": "^0.1.x",
+    "@react-native-masked-view/masked-view": "^0.2.x"
   }
 }
