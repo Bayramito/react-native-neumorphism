@@ -1,7 +1,7 @@
 import { Box, BoxShadow, Canvas, FitBox, Group, mix, rect, rrect, runTiming, useComputedValue, useTouchHandler, useValue, } from "@shopify/react-native-skia";
 import React, { memo, useEffect } from "react";
 import { runOnJS } from "react-native-reanimated";
-import { pSBC } from "./utils/helpers";
+import { colorLuminance, } from "./utils/helpers";
 const NeomorphicSwitch = ({ size, color, radius, onChange, active, b1, b2, c1, c2, d1, bMain, cMain, dMain, }) => {
     const pressed = useValue(active ? 1 : 0);
     const onTouch = useTouchHandler({
@@ -34,18 +34,18 @@ const NeomorphicSwitch = ({ size, color, radius, onChange, active, b1, b2, c1, c
         },
     ], [pressed]);
     const mixedColor = useComputedValue(() => pressed.current === 0
-        ? pSBC(c1 || -0.4, color)
-        : pSBC(c1 || 0.2, "#efc332"), [pressed]);
+        ? colorLuminance(color, c1 || -0.4)
+        : colorLuminance("efc332", c1 || 0.2), [pressed]);
     return (React.createElement(Canvas, { style: { width: w + offset + 5, height: h + offset + 5 }, onTouch: onTouch },
         React.createElement(FitBox, { src: src, dst: rect(offset, offset, w - offset, h - offset), children: undefined },
-            React.createElement(Box, { box: border, color: pSBC(bMain || 0.1, color) },
-                React.createElement(BoxShadow, { dx: offset, dy: offset / 2, blur: offset / 2, color: pSBC(b1 || -0.3, color) }),
-                React.createElement(BoxShadow, { dx: -offset, dy: -offset / 2, blur: offset / 2, color: pSBC(b2 || 0.3, color) })),
-            React.createElement(Box, { box: container, color: pSBC(cMain || 0.2, color) },
+            React.createElement(Box, { box: border, color: colorLuminance(color, bMain || 0.1) },
+                React.createElement(BoxShadow, { dx: offset, dy: offset / 2, blur: offset / 2, color: colorLuminance(color, b1 || -0.3) }),
+                React.createElement(BoxShadow, { dx: -offset, dy: -offset / 2, blur: offset / 2, color: colorLuminance(color, b2 || 0.3) })),
+            React.createElement(Box, { box: container, color: colorLuminance(color, cMain || 0.2) },
                 React.createElement(BoxShadow, { dx: offset, dy: offset, blur: offset, color: mixedColor, inner: true }),
-                React.createElement(BoxShadow, { dx: -offset, dy: -offset, blur: offset, color: pSBC(c2 || 0.3, color), inner: true })),
+                React.createElement(BoxShadow, { dx: -offset, dy: -offset, blur: offset, color: colorLuminance(color, c2 || 0.3), inner: true })),
             React.createElement(Group, { transform: transform },
-                React.createElement(Box, { box: dot, color: pSBC(dMain || 0.32, color) },
-                    React.createElement(BoxShadow, { dx: offset / 2, dy: offset / 2, blur: offset / 2, color: pSBC(d1 || -0.4, color) }))))));
+                React.createElement(Box, { box: dot, color: colorLuminance(color, dMain || 0.32) },
+                    React.createElement(BoxShadow, { dx: offset / 2, dy: offset / 2, blur: offset / 2, color: colorLuminance(color, d1 || -0.4) }))))));
 };
 export default memo(NeomorphicSwitch);

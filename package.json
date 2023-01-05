@@ -1,6 +1,6 @@
 {
   "name": "@bayramitto/react-native-neumorphism",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "React Native Neumorphism Component Created using React Native Skia",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -43,5 +43,6 @@
     "react-native-reanimated": "2.x",
     "@shopify/react-native-skia": "^0.1.x",
     "@react-native-masked-view/masked-view": "^0.2.x"
-  }
+  },
+  "dependencies": {}
 }
