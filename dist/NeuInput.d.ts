@@ -13,5 +13,5 @@ declare const NeuInput: ({ text, placeholder, isActive, autoCapitalize, disabled
     onPanEnd?: () => void;
     children: any;
     isTyping?: any;
-}) => {};
+}) => any;
 export default NeuInput;

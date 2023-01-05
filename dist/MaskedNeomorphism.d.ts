@@ -16,8 +16,5 @@ declare const MaskedNeomorphism: ({ maskColors, style, children, color, offsetSh
     locations: any;
     offsetMode: any;
     maskConfig: any;
-}) => 100 | {
-    style: any;
-    width: any;
-};
+}) => any;
 export default MaskedNeomorphism;

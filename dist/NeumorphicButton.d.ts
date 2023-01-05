@@ -1,11 +1,2 @@
-declare const NeumorphismButton: {
-    (props: any): {
-        handlePressIn: any;
-    };
-    propTypes: {
-        children: any;
-        style: any;
-        size: any;
-    };
-};
+declare const NeumorphismButton: (props: any) => any;
 export default NeumorphismButton;

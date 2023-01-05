@@ -1,7 +1,7 @@
-import { useCallback, useState } from "react";
-import PropTypes from "prop-types";
-import { StyleSheet } from "react-native";
-const NeumorphismButton = props => {
+import React, { useCallback, useState } from "react";
+import { StyleSheet, TouchableWithoutFeedback, View } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
+const NeumorphismButton = (props) => {
     const { size = 12 } = props;
     const [isDown, setDown] = useState(false);
     const handlePressIn = useCallback(() => {
@@ -27,43 +27,10 @@ const NeumorphismButton = props => {
         borderRadius: size,
         padding: size,
     };
-    return onPressIn = { handlePressIn };
-    onPressOut = { handlePressOut } >
-        style;
-    {
-        [styles.buttonOuter, buttonCommonStyle, buttonOuterStyle];
-    }
-     >
-        style;
-    {
-        [styles.buttonInner, buttonCommonStyle, buttonInnerStyle];
-    }
-     >
-        colors;
-    {
-        gradColors;
-    }
-    useAngle = { true:  };
-    angle = { 145:  };
-    angleCenter = {};
-    {
-        x: 0.5, y;
-        0.5;
-    }
-};
-style = { [styles.buttonFace, buttonFaceStyle, props.style]:  }
-    >
-        { props, : .children }
-    < /LinearGradient>
-    < /View>
-    < /View>
-    < /TouchableWithoutFeedback>;
-;
-;
-NeumorphismButton.propTypes = {
-    children: PropTypes.node,
-    style: PropTypes.object,
-    size: PropTypes.number,
+    return (React.createElement(TouchableWithoutFeedback, { onPressIn: handlePressIn, onPressOut: handlePressOut },
+        React.createElement(View, { style: [styles.buttonOuter, buttonCommonStyle, buttonOuterStyle] },
+            React.createElement(View, { style: [styles.buttonInner, buttonCommonStyle, buttonInnerStyle] },
+                React.createElement(LinearGradient, { colors: gradColors, useAngle: true, angle: 145, angleCenter: { x: 0.5, y: 0.5 }, style: [styles.buttonFace, buttonFaceStyle, props.style] }, props.children)))));
 };
 const styles = StyleSheet.create({
     buttonOuter: {

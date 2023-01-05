@@ -1,4 +1,2 @@
-declare const NeomorphComponent: (props: any) => {
-    [x: number]: any;
-};
+declare const NeomorphComponent: (props: any) => any;
 export default NeomorphComponent;
