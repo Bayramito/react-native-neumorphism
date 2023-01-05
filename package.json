@@ -1,0 +1,45 @@
+{
+  "name": "@bayramitto/react-native-neumorphism",
+  "version": "0.0.1",
+  "description": "React Native Neumorphism Component Created using React Native Skia",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "mocha --reporter spec",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bayramito/react-native-colorpicker"
+  },
+  "keywords": [
+    "react-native",
+    "color",
+    "picker"
+  ],
+  "author": "bayram-arif",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bayramito/react-native-colorpicker/issues"
+  },
+  "homepage": "https://github.com/Bayramito/react-native-colorpicker#readme",
+  "devDependencies": {
+    "react": "18.1.0",
+    "react-native": "0.70.1",
+    "react-native-gesture-handler": "^2.6.1",
+    "react-native-linear-gradient": "^2.6.2",
+    "react-native-reanimated": "^2.10.0",
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "typescript": "^4.8.3",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3"
+  },
+  "peerDependencies": {
+    "react-native-gesture-handler": "2.x",
+    "react-native-linear-gradient": "2.x",
+    "react-native-reanimated": "2.x"
+  }
+}
